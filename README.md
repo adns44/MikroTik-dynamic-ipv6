@@ -8,7 +8,7 @@ Az IPv6 tűzfallal védett hálózat némileg hasonló az IPv4 NAT-hoz, alapvet�
 A legtöbb népszerű otthoni router nem támogatja ezt, a dinamikus prefixekhez nem igazán tudnak igazodni. Az új előtag lekérésével általában nincs probléma, de a tűzfalat már nem tudják módosítani. Ez akkor nem probléma, ha minden eszközt egy kalap alá vennénk, azaz vagy beengedünk mindent, vagy limitálunk, de itt most pont egy-egy eszköznek engednénk a bejövő kapcsolatait.
 
 <h3>Beüzemelés</h3>
-A beüzemelés néhány rövid lépésből áll. Első körben tegyük vágólapra a szkript tartalmát, majd lépjünk be a MikroTik routerbe. Vagy webfelületen, vagy a CLI-n esetleg WinBox-on lépjünk a system > script részre, és adjunk hozzá újat.
+A beüzemelés néhány rövid lépésből áll. Első körben tegyük vágólapra a <a href="https://github.com/adns44/MikroTik-dynamic-ipv6/blob/main/MikroTik%20dynamic%20IPv6%20script">szkript</a> tartalmát, majd lépjünk be a MikroTik routerbe. Vagy webfelületen, vagy a CLI-n esetleg WinBox-on lépjünk a system > script részre, és adjunk hozzá újat.
 Különleges engedélyekre nincs szükség. Grafikus felületen a szerkesztés egyszerű, CLI-n pedig javaslom az edit parancs használatát, így egy nano-hoz hasonló szerkesztővel lehet a szkript tartalmát kezelni.
 Másoljuk be a vágólapról. Ezt követően szükség lesz némi módosításra a megfelelő működés érdekében.
 
