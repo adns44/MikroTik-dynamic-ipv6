@@ -1,3 +1,4 @@
+<pre>
 # MikroTik-dynamic-ipv6
 An easy-to-use script, that helps you to use your new IPv6 prefix on firewall
 
@@ -44,3 +45,5 @@ This easy-to-use script helps you to restart the IPv6 on your MikroTik, get a ne
 
 <h3>WHY?</h3>
 In my country Hungary, Magyar Telekom and DIGI provide IPv6 on their optical network (FTTB/FTTH) wiht PPPoE. MikroTik has very less support to work with dynamicaly changing IPv6 prefixes. For example, can't get new prefix or address automaticaly and can't update the firewall. The latest is important, if you have a home server, but you don't want to allow new incoming connections to other devices. It improves security, the devices can't accessible directly from outside (same as IPv4 NAT without port forwarding). By default, on most of the popular routers, the devices accessible from outside and usualy you can't change it.
+
+</pre>
