@@ -1,0 +1,25 @@
+#Restart the IPv6, and change addresslists for desired machines
+{
+#Array with machine names and address suffix pairs
+:local machines ({"srv01"="aa11:bb22:cc33:dd44"})
+#Settings
+#IPv6 pool:
+:local poolname "digi"
+:local desiredif "br-lan"
+:local pppoeif "digi-pppoe"
+#DO NOT MODIFY IF YOU DON'T KNOW WHAT YOU are DOING!!!
+#Turn off DHCPv6 client
+:execute [/ipv6 dhcp-client disable [find interface=$pppoeif]]
+#Wait 0.5 secs before get a new prefix (and address)
+:delay 0.5
+#Turn on DHCPv6 client
+:execute [/ipv6 dhcp-client enable [find interface=$pppoeif]]
+#Wait 3 secs to get a prefix (and an address)
+:delay 3
+#Get local IP6
+:local ip6address [/ipv6 address get [find from-pool=$poolname interface=$desiredif] address]
+#Get the /64 prefix
+:local ip6prefix [tostr [pick $ip6address 0 [find $ip6address "::/"]]]
+#Write prefix to addresslist
+:foreach k,v in $machines do={:execute [/ipv6 firewall address-list set [find list="$k"] address=($ip6prefix.":".$v)]}
+}
