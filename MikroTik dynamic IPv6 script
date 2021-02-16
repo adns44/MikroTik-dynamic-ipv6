@@ -1,4 +1,5 @@
 #Restart the IPv6, and change addresslists for desired machines
+:delay 7.5
 {
 #Array with machine names and address suffix pairs
 :local machines ({"srv01"="aa11:bb22:cc33:dd44"})
