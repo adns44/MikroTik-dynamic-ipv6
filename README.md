@@ -34,6 +34,8 @@ PPPoE interfész neve
 
 Ha megvannak ezek is, lehet menteni. Ezzel a szkript a routeren van, elérhető, használható. Érdemes lehet kézi futtatással meggyőződni a működőképességéről.
 
+Következő lépésként az IPv6-os tűzfal forward láncán engedjük a forgalmat, ahol a dst-address-list valamely korábban megadott eszközre mutat. Érdemes optimalizálni a szabályok sorrendjét, azaz a forward lánc drop-ja fölé rakni ezt mindenképp, de célszerű minél előrébb szerepeltetni.
+
 Ezt követően a szkriptet csak rendeljük hozzá a PPPoE újracsatlakozáshoz, vagy - ha már van meglévő szkriptünk erre az esetre - írjuk bele, hogy futtassa ezt. Azért javaslom mindenképp új szkript felvételét, mert így a feladatok jól elkülöníthetőek.
 A hozzárendelés alap esetben úgy történik, hogy a PPP profiles részen az on-up eseményhez kapcsoljuk a szkriptet.
 A szkript a PPPoE újracsatlakozásnál gondoskodik a szabályok és a cím frissítéséről.
