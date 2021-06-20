@@ -22,5 +22,5 @@
 #Get the /64 prefix
 :local ip6prefix [tostr [pick $ip6address 0 [find $ip6address "::/"]]]
 #Write prefix to addresslist
-:foreach k,v in $machines do={:execute [/ipv6 firewall address-list set [find list="$k"] address=($ip6prefix.":".$v)]}
+:foreach k,v in $machines do={:execute [/ipv6 firewall address-list remove [find list="$k"]]; :execute [/ipv6 firewall address-list add list="$k" address=($ip6prefix.":".$v) timeout="10w"]}
 }
